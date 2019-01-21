@@ -1,0 +1,5 @@
+"label","type","length","externalId","required","trackFeedHistory","unique"
+"Altra carta in essere stesso NDG","TEXT","255","false","false","false","unique"
+"Plafond altra carta in essere","TEXT","255","false","false","false","unique"
+"Altra carta in richiesta o non attiva","TEXT","255","false","false","false","unique"
+"Carta Nexi in essere","TEXT","255","false","false","false","unique"

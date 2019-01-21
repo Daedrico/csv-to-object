@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject>
+  <fields>
+    <fullName>AltraCartaInEssereStessoNdg__c</fullName>
+    <externalId>false</externalId>
+    <label>Altra carta in essere stesso NDG</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory />
+    <type>TEXT</type>
+    <unique>unique</unique>
+  </fields>
+  <fields>
+    <fullName>AltraCartaInRichiestaONonAttiva__c</fullName>
+    <externalId>false</externalId>
+    <label>Altra carta in richiesta o non attiva</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory />
+    <type>TEXT</type>
+    <unique>unique</unique>
+  </fields>
+  <fields>
+    <fullName>CartaNexiInEssere__c</fullName>
+    <externalId>false</externalId>
+    <label>Carta Nexi in essere</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory />
+    <type>TEXT</type>
+    <unique>unique</unique>
+  </fields>
+  <fields>
+    <fullName>PlafondAltraCartaInEssere__c</fullName>
+    <externalId>false</externalId>
+    <label>Plafond altra carta in essere</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory />
+    <type>TEXT</type>
+    <unique>unique</unique>
+  </fields>
+</CustomObject>
