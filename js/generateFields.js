@@ -16,11 +16,13 @@ fs.createReadStream(inputFile)
           fields:
             _(parse(data, { columns: true, skip_empty_lines: true }))
               .map(r => {
-                r.fullName = _(r.label)
-                  .split(' ')
-                  .map(r => { return _.capitalize(r) })
-                  .join('')
-                  + '__c'
+                if (!r.fullName) {
+                  r.fullName = _(r.label)
+                    .split(' ')
+                    .map(r => { return _.capitalize(r) })
+                    .join('')
+                    + '__c'
+                }
 
                 //per ordinamento esplicito
                 return {
