@@ -24,17 +24,40 @@ fs.createReadStream(inputFile)
                     + '__c'
                 }
 
-                //per ordinamento esplicito
-                return {
-                  fullName: r.fullName,
-                  externalId: r.externalId,
-                  label: r.label,
-                  length: r.length,
-                  required: r.required,
-                  trackFeedHistory: r.trackFeedHistory,
-                  trackHistory: r.trackHistory,
-                  type: r.type,
-                  unique: r.unique
+                if (r.type === 'Currency' || r.type === 'Number') {
+                  return {
+                    fullName: r.fullName,
+                    externalId: r.externalId || false,
+                    label: r.label,
+                    precision: 18,
+                    scale: 2,
+                    required: r.required || false,
+                    trackFeedHistory: r.trackFeedHistory || false,
+                    trackHistory: r.trackHistory || false,
+                    type: r.type
+                  }
+                } else if (r.type === 'Date') {
+                  return {
+                    fullName: r.fullName,
+                    externalId: r.externalId || false,
+                    label: r.label,
+                    required: r.required || false,
+                    trackFeedHistory: r.trackFeedHistory || false,
+                    trackHistory: r.trackHistory || false,
+                    type: r.type
+                  }
+                } else {
+                  return {
+                    fullName: r.fullName,
+                    externalId: r.externalId || false,
+                    label: r.label,
+                    length: r.length || 255,
+                    required: r.required || false,
+                    trackFeedHistory: r.trackFeedHistory || false,
+                    trackHistory: r.trackHistory || false,
+                    type: r.type,
+                    unique: r.unique || false
+                  }
                 }
               })
               .orderBy(['fullName'], ['asc'])
