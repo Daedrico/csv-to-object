@@ -49,7 +49,7 @@ fs.createReadStream(inputFile)
         }
       }
 
-      const fileName = `${outputFolder}/${r.name}_${r.label}.md`
+      const fileName = `${outputFolder}/${r.name}.${r.label}.md`
       fs.writeFile(fileName, o2x(obj), (err) => {
         if (err) throw err
         console.log(`${fileName} was succesfully saved!`)
