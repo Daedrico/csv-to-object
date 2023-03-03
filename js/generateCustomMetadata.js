@@ -9,9 +9,11 @@ var outputFolder = 'output/cm'
 fs.createReadStream(inputFile)
   .on('data', function (data) {
 
-    _.each(parse(data, { columns: true, skip_empty_lines: true }), r => {
+    _.each(parse(data, { columns: true, skip_empty_lines: true }).filter(v => v.name), r => {
       var newR = _.clone(r)
       newR.values = []
+
+      if (newR.protected === undefined) newR.protected = false
 
       _.forIn(newR, (v, k) => {
         if (k === 'label') return
