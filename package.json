@@ -3,12 +3,11 @@
   "version": "1.0.0",
   "main": "script.js",
   "dependencies": {
-    "csv": "^5.0.1",
+    "csv-parse": "^5.3.6",
     "fs": "^0.0.1-security",
     "lodash": "^4.17.11",
     "object-to-xml": "^2.0.0"
   },
-  "devDependencies": {},
   "scripts": {
     "fields": "node js/generateFields.js",
     "cm": "node js/generateCustomMetadata.js"
