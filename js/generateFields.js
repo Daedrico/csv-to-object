@@ -1,15 +1,14 @@
 const _ = require('lodash')
 const fs = require('fs')
 const parse = require('csv-parse/lib/sync')
-const o2x = require('object-to-xml');
+const o2x = require('object-to-xml')
 
-var inputFile = 'input/campi.csv'
-var outputFile = 'output/Object.xml'
+const inputFile = 'input/campi.csv'
+const outputFile = 'output/Object.xml'
 
 fs.createReadStream(inputFile)
   .on('data', function (data) {
-
-    var obj = {
+    const obj = {
       '?xml version="1.0" encoding="UTF-8"?': null,
       CustomObject: {
         '#': {
@@ -20,8 +19,8 @@ fs.createReadStream(inputFile)
                   r.fullName = _(r.label)
                     .split(' ')
                     .map(r => { return _.capitalize(r) })
-                    .join('')
-                    + '__c'
+                    .join('') +
+                    '__c'
                 }
 
                 if (r.type === 'Currency' || r.type === 'Number') {

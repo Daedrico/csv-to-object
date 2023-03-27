@@ -1,16 +1,15 @@
 const _ = require('lodash')
 const fs = require('fs')
 const { parse } = require('csv-parse/sync')
-const o2x = require('object-to-xml');
+const o2x = require('object-to-xml')
 
-var inputFile = 'input/cm.csv'
-var outputFolder = 'output/cm'
+const inputFile = 'input/cm.csv'
+const outputFolder = 'output/cm'
 
 fs.createReadStream(inputFile)
   .on('data', function (data) {
-
     _.each(parse(data, { columns: true, skip_empty_lines: true }).filter(v => v.name), r => {
-      var newR = _.clone(r)
+      const newR = _.clone(r)
       newR.values = []
 
       if (newR.protected === undefined) newR.protected = false
@@ -20,7 +19,6 @@ fs.createReadStream(inputFile)
         if (k === 'protected') return
         if (k === 'values') return
         if (k === 'name') return _.unset(newR, k)
-
 
         newR.values.push({
           field: k,
@@ -37,11 +35,11 @@ fs.createReadStream(inputFile)
         _.unset(newR, k)
       })
 
-      var obj = {
+      const obj = {
         '?xml version="1.0" encoding="UTF-8"?': null,
         CustomMetadata: {
           '@': {
-            'xmlns': 'http://soap.sforce.com/2006/04/metadata',
+            xmlns: 'http://soap.sforce.com/2006/04/metadata',
             'xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance',
             'xmlns:xsd': 'http://www.w3.org/2001/XMLSchema'
           },
