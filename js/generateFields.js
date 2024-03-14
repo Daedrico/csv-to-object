@@ -1,6 +1,6 @@
 const _ = require('lodash')
 const fs = require('fs')
-const parse = require('csv-parse/lib/sync')
+const { parse } = require('csv-parse/sync')
 const o2x = require('object-to-xml')
 
 const inputFile = 'input/campi.csv'
