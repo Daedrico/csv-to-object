@@ -1,0 +1,2 @@
+fullName,label,type,length,externalId,required,trackFeedHistory,unique
+Test__c,Test,Picklist,,false,false,false,unique

@@ -3,7 +3,7 @@ const fs = require('fs')
 const { parse } = require('csv-parse/sync')
 const o2x = require('object-to-xml')
 
-const inputFile = 'input/campi.csv'
+const inputFile = 'input/fields.csv'
 const outputFile = 'output/Object.xml'
 
 fs.createReadStream(inputFile)
