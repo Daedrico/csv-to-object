@@ -35,6 +35,20 @@ fs.createReadStream(inputFile)
                     trackHistory: r.trackHistory || false,
                     type: r.type
                   }
+                } else if (r.type === 'Picklist') {
+                  return {
+                    fullName: r.fullName,
+                    label: r.label,
+                    required: r.required || false,
+                    trackFeedHistory: r.trackFeedHistory || false,
+                    trackHistory: r.trackHistory || false,
+                    type: r.type,
+                    valueSet: {
+                      restricted: true,
+                      valueSetName: r.valueSetName
+                    }
+                  }
+
                 } else if (r.type === 'Date') {
                   return {
                     fullName: r.fullName,
